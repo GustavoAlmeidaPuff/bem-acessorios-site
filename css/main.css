@@ -1,0 +1,9 @@
+:root {
+    --identity-purple: #dfb0f6;
+    --identity-green: #d6e497;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
