@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="../css/tipografy.css">
         <link rel="stylesheet" href="../css/styles.css">
         <link rel="stylesheet" href="../css/main.css">
+        <script src="../js/scripts.js"></script>
         <title>Bem Acessórios</title>
     </head>
     <body> 
@@ -235,25 +236,5 @@
             </div>
         </placeholders>
 
-
-        <script>
-            let lastScrollTop = 0;
-            let header = document.getElementById("header");
-
-            window.addEventListener("scroll", function() {
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                if (scrollTop > lastScrollTop) {
-                    // Scroll para baixo
-                    header.style.top = "-120px"; // Ajuste esse valor conforme necessário
-                } else {
-                    // Scroll para cima
-                    header.style.top = "0";
-                }
-
-                lastScrollTop = scrollTop;
-            });
-
-        </script>
     </body>
 </html>
