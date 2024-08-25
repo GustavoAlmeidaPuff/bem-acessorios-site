@@ -210,13 +210,14 @@ placeholders{
 }
     #Zt4FbM-1 {
         height: 100px;
-        margin-top: 10px;
+        margin-top: 16px;
     }
 
 .Et1Wza {
     height: 20px;
     background-color: #ddd;
     border-radius: 3px;
+    margin-top: 18px;
     animation: loading 1.5s infinite;
 }
 .Et1Wza:nth-child(2) {
