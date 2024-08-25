@@ -1,7 +1,17 @@
 @import url(./main.css);
 
 /* HEADER */
+header{
+    /* plchldr */
+}
 
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    transition: top 0.3s ease-in-out;
+}
 
 /* estilizaçoes do header em sí */
 .header-nav {
@@ -155,3 +165,100 @@
             fill: #181717;
         }
 
+
+
+
+
+
+/* placehlders */
+placeholders{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 60px; /* Adicionei padding-top */
+    margin: 0 20px;
+}
+#kzX8yd-1 {
+    width: 30%;
+}
+
+#kzX8yd-3 {
+    width: 35%;
+}
+
+.kzX8yd {
+    width: 100%;
+    margin: 10px;
+    margin-top: 50px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    width: 70%;
+}
+.Cz9Hkx {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 4px;
+    margin-bottom: 20px;
+}
+.Zt4FbM {
+    width: 100%;
+    height: 200px;
+    background-color: #ccc;
+    border-radius: 5px;
+    animation: loading 1.5s infinite;
+}
+    #Zt4FbM-1 {
+        height: 100px;
+        margin-top: 10px;
+    }
+
+.Et1Wza {
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 3px;
+    animation: loading 1.5s infinite;
+}
+.Et1Wza:nth-child(2) {
+    width: 80%;
+}
+.Et1Wza:nth-child(3) {
+    width: 60%;
+}
+@keyframes loading {
+    0% {
+        background-color: #ccc;
+    }
+    50% {
+        background-color: #ddd;
+    }
+    100% {
+        background-color: #ccc;
+    }
+}
+
+
+.circle {
+    width: 70px;
+    height: 70px;
+    margin: 7px;
+    background-color: #ccc;
+    border-radius: 50%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-color: #ccc;
+    }
+    50% {
+        background-color: #ddd;
+    }
+    100% {
+        background-color: #ccc;
+    }
+}
+
+.circulos{
+    display: flex;
+}
