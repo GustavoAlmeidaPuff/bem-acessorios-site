@@ -1,0 +1,157 @@
+@import url(./main.css);
+
+/* HEADER */
+
+
+/* estilizaçoes do header em sí */
+.header-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 20px;
+    max-height: 90px;
+}
+
+    /* estilizações da logo */
+
+    .logo {
+        width: 185px;
+        height: auto;
+        max-height: 80px;
+        min-width: 100px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+
+
+    /* estilizações da barra de search */
+
+    .group {
+        display: flex;
+        line-height: 5px;
+        align-items: center;
+        position: relative;
+        margin-right: 0px;
+    }
+
+    .header-search-input {
+        width: 70vh;
+        height: 65px;
+        line-height: 28px;
+        padding: 0 3rem;
+        padding-left: 2.5rem;
+        border: 2px solid transparent;
+        border-radius: 4px;
+        outline: none;
+        background-color: #f3f3f4;
+        color: rgb(13, 14, 33);
+        transition: 0.2s ease;
+        
+    }
+
+    .header-search-input::placeholder {
+        color: #90909a;
+        font-size: 17px;
+    }
+
+    .header-search-input:focus,
+    .header-search-input:hover {
+        outline: none;
+        border-color: rgba(var(--identity-green), 0.8);
+        background-color: #fff;
+        box-shadow: 0 0 0 4px rgb(var(--identity-green), 0.4);
+    }
+
+    .search-icon-svg {
+        position: absolute;
+        left: 1rem;
+        fill: black;
+        width: 1rem;
+        height: 1rem;
+    }
+
+
+
+    /* estilizações das opçoes */
+    .options-right {
+        display: flex;
+        justify-content: space-between;
+        width: 25%;
+    }
+
+        /* estilizaçoes do botão de atendimento */
+
+        .header-contact-us-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 15px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            width: 25vh;
+        }
+
+        .header-contact-us-button-icon {
+            margin-right: 4px;
+            max-height: 38px;
+            min-height: 20px;
+        }
+
+        .header-contact-us-button-text {
+            text-align:start;
+            font-size: 17px;
+            font-family: Lexand, Arial, Helvetica, sans-serif;
+        }
+
+        .header-contact-us-button-icon-svg {
+            transition: 0.3s ease;
+        }
+
+        .header-contact-us-button:hover .header-contact-us-button-icon-svg{
+            fill: rgb(var(--identity-green));
+        }
+
+        /* estilizaões do botão de carrinho */
+        .header-cart-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 15px;
+            gap: 15px;
+            background-color: #181717 ;
+            outline: 2px #181717 solid;
+            outline-offset: -3px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: 400ms;
+        }
+
+        .header-cart-button .cart-button-text{
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            font-weight: 700;
+            font-size: 1em;
+            transition: 400ms;
+        }
+
+        .header-cart-button svg path {
+            transition: 400ms;
+        }
+
+        .header-cart-button:hover {
+            background-color: rgb(var(--identity-green));
+            border: 0;
+        }
+
+        .header-cart-button:hover .cart-button-text {
+            color: #181717;
+        }
+
+        .header-cart-button:hover svg path {
+            fill: #181717;
+        }
+

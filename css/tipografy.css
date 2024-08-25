@@ -1,11 +1,14 @@
 @font-face {
     font-family: 'Malmont';
     src: url('../assets/fonts/Malmont\ Regular.otf') format('woff2'),
-         url('../assets/fonts/Malmont\ Regular.ttf') format('woff');
+        url('../assets/fonts/Malmont\ Regular.ttf') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
-#logo-text-bem {
-    font-family: Malmont, Arial, Helvetica, sans-serif;
+@font-face {
+    font-family: 'Lexend';
+    src: url('../assets/fonts/Lexend-VariableFont_wght.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }

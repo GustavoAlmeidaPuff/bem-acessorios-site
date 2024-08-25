@@ -1,6 +1,7 @@
+/* cores da identidade visual */
 :root {
-    --identity-purple: #dfb0f6;
-    --identity-green: #d6e497;
+    --identity-purple: 223, 176, 246;
+    --identity-green: 214, 228, 151;
 }
 
 * {
