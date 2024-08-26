@@ -6,7 +6,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: white;
+    background-color: rgb(var(--identity-green));
     transition: top 0.3s ease-in-out;
 }
 
@@ -31,7 +31,9 @@
         display: flex;
     }
 
-
+    .logo img {
+        fill: #ffffff;
+    }
 
     /* estilizações da barra de search */
 
@@ -59,16 +61,16 @@
     }
 
     .header-search-input::placeholder {
-        color: #90909a;
+        color: #737373;
         font-size: 17px;
     }
 
     .header-search-input:focus,
     .header-search-input:hover {
         outline: none;
-        border-color: rgba(var(--identity-green), 0.8);
+        border-color: rgba(var(--identity-purple), 0.8);
         background-color: #fff;
-        box-shadow: 0 0 0 4px rgb(var(--identity-green), 0.4);
+        box-shadow: 0 0 0 4px rgb(var(--identity-purple), 0.4);
     }
 
     .search-icon-svg {
@@ -109,16 +111,27 @@
 
         .header-contact-us-button-text {
             text-align:start;
+            color: white;
             font-size: 17px;
             font-family: Lexand, Arial, Helvetica, sans-serif;
+        }
+
+        .header-contact-us-button-text {
+            transition: 0.3s ease;
         }
 
         .header-contact-us-button-icon-svg {
             transition: 0.3s ease;
         }
 
-        .header-contact-us-button:hover .header-contact-us-button-icon-svg{
-            fill: rgb(var(--identity-green));
+        .header-contact-us-button-icon-svg {
+            fill: white;
+        }
+
+        .header-contact-us-button:hover .header-contact-us-button-icon-svg,
+        .header-contact-us-button:hover .header-contact-us-button-text {
+            fill: rgb(var(--identity-purple));
+            color: rgb(var(--identity-purple));
         }
 
         /* estilizaões do botão de carrinho */
@@ -128,8 +141,8 @@
             align-items: center;
             padding: 10px 15px;
             gap: 15px;
-            background-color: #181717 ;
-            outline: 2px #181717 solid;
+            background-color: #fff ;
+            outline: 2px white solid;
             outline-offset: -3px;
             border-radius: 5px;
             border: none;
@@ -139,7 +152,7 @@
 
         .header-cart-button .cart-button-text{
             font-family: Arial, Helvetica, sans-serif;
-            color: white;
+            color: #737373 ;
             font-weight: 700;
             font-size: 1em;
             transition: 400ms;
@@ -147,19 +160,13 @@
 
         .header-cart-button svg path {
             transition: 400ms;
+            fill: #737373;
         }
 
         .header-cart-button:hover {
-            background-color: rgb(var(--identity-green));
+            background-color: rgb(var(--identity-purple));
             border: 0;
-        }
-
-        .header-cart-button:hover .cart-button-text {
-            color: #181717;
-        }
-
-        .header-cart-button:hover svg path {
-            fill: #181717;
+            outline: rgb(var(--identity-purple));
         }
 
 
