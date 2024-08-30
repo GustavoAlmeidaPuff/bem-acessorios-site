@@ -1,5 +1,9 @@
 @import url(./main.css);
 
+body {
+    background-color: #fbfbf8;
+}
+
 /* HEADER */
 
 #header {
@@ -266,4 +270,105 @@ placeholders{
 
 .circulos{
     display: flex;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #f1f1f1;
+    padding: 20px 0;
+    color: #333;
+}
+
+.footer-logo {
+    width: 215px;
+    margin-top: -18px;
+}
+
+.footer-insta-logo{
+    width: 45px;
+    margin-top: 7px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 5px;
+}
+
+.footer-section h3 {
+    color: rgb(var(--identity-green));
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-social a {
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #e9e9e9;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+.footer-bottom a {
+    background: linear-gradient(to right, #99b420, rgb(var(--identity-purple)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+}
+
+.whatsapp-button img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.whatsapp-button img:hover {
+    transform: scale(1.1);
 }
