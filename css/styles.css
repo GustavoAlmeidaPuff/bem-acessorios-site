@@ -41,6 +41,10 @@ body {
 
     /* estilizações da barra de search */
 
+    .mobile-search-wrapper{
+        display: none;
+    }
+
     .group {
         display: flex;
         line-height: 5px;
