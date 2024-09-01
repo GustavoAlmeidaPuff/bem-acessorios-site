@@ -67,14 +67,25 @@
     }
     
     /* FOOTER */
+    .footer{
+        width: 100%;
+    }
     .footer-container {
         display: block;
         justify-content: center;
         align-items: center;
         text-align: center;
+        width: 100%;
+        max-width: 87%;
+        text-wrap: wrap;
+        flex-wrap: wrap;
     }
     .footer-section {
+        text-wrap: wrap;
+        flex-wrap: wrap;
         margin-top: 20px;
+        width: 100%;
+        max-width: 100%;
     }
 
 }
