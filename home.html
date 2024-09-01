@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../bem-acessorios-site/css/styles.css">
         <link rel="stylesheet" href="../bem-acessorios-site/css/main.css">
         <link rel="stylesheet" href="../bem-acessorios-site/css/responsive.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
         <title>Bem Acessórios</title>
     </head>
     <body> 
@@ -55,7 +56,7 @@
                     <div class="header-cart-button">
                         <svg viewBox="0 0 16 16" class="bi bi-cart-check" height="24" width="24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
                             <path d="M160 64c0-11.8-6.5-22.6-16.9-28.2s-23-5-32.8 1.6l-96 64C-.5 111.2-4.4 131 5.4 145.8s29.7 18.7 44.4 8.9L96 123.8 96 416l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0 96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-352z"></path>
-                            <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+                            <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1 0 0 1 2 0z7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
                         </svg>
                         <p class="cart-button-text">0</p>
                     </div>
@@ -72,12 +73,20 @@
                 </div>
             </form>
 
-
-            <hr class="header-bottom-line">
+            
         </header>
         <!-- conteudo da pagina -->
         
-        <main></main>
+        <main>
+            <!-- Banner Carrossel -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="#"><img class="wide-banner" src="https://placehold.co/1700x350/png"><img class="mobile-banner" src="https://placehold.co/350x470/png" ></a></div>
+                    <div class="swiper-slide"><a href="#"><img class="wide-banner" src="https://placehold.co/1700x350/png"><img class="mobile-banner" src="https://placehold.co/350x470/png" ></a></div>
+                    <div class="swiper-slide"><a href="#"><img class="wide-banner" src="https://placehold.co/1700x350/png"><img class="mobile-banner" src="https://placehold.co/350x470/png" ></a></div>
+                </div>
+            </div>
+        </main>
 
         <!-- placeholders -->
         <placeholders>
@@ -295,5 +304,22 @@
         </div>
 
         <script src="../bem-acessorios-site/js/scripts.js"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                loop: true,
+                navigation: {
+                    nextEl: '.custom-swiper-button-next',
+                    prevEl: '.custom-swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 5000,
+                },
+            });
+        </script>
     </body>
 </html>
