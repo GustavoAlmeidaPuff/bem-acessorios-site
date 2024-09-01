@@ -6,7 +6,7 @@ window.addEventListener("scroll", function() {
 
     if (scrollTop > lastScrollTop) {
         // Scroll para baixo
-        header.style.top = "-150px"; // Ajuste esse valor conforme necessário
+        header.style.top = "-180px"; // Ajuste esse valor conforme necessário
     } else {
         // Scroll para cima
         header.style.top = "0";
