@@ -1,4 +1,4 @@
-@media (max-width: 740px) {
+@media (max-width: 1000px) {
     body{
         width: 100%;
         overflow-x: hidden;
@@ -47,8 +47,30 @@
             object-fit: cover;
         }
 
+        /* navegação por categorias */
+        .categories {
+            justify-content: start;
+            padding: 30px;
+            overflow-x: auto;
+            overflow-x: scroll; /* Permite rolar horizontalmente */
+            overflow-y: hidden; /* Esconde o conteúdo que excede verticalmente */
+            white-space: nowrap;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none
+        }
+
+        .category-navigation{
+            margin: 0 10px;
+        }
+
+        .category:hover img{
+            margin: 0 0 0 0;
+            outline: 2px solid rgb(var(--identity-purple));
+        }
+
         /* placeholders */
         placeholders {
+            margin: 0 28px;
             display: block;
             padding-top: 20px; /* Adicionei padding-top */
             width: 92%;
