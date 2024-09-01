@@ -95,6 +95,7 @@ body {
     .options-right {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         width: 25%;
     }
 
@@ -142,13 +143,15 @@ body {
             color: rgb(var(--identity-purple));
         }
 
+        
         /* estilizaões do botão de carrinho */
         .header-cart-button {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px 15px;
+            padding: 0px 15px;
             gap: 15px;
+            height: 43px;
             background-color: #fff ;
             outline: 2px white solid;
             outline-offset: -3px;
