@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../bem-acessorios-site/css/tipografy.css">
-        <link rel="stylesheet" href="../bem-acessorios-site/css/styles.css">
-        <link rel="stylesheet" href="../bem-acessorios-site/css/main.css">
-        <link rel="stylesheet" href="../bem-acessorios-site/css/responsive.css">
+        <link rel="stylesheet" href="./css/tipografy.css">
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/responsive.css">
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
         <title>Bem Acessórios</title>
     </head>
@@ -16,7 +16,7 @@
                 <!-- LOGO -->
                 <a href="../bem-acessorios-site/home.html">
                     <div class="logo">
-                        <img src="../bem-acessorios-site/assets/images/logo-black-n-white.svg">
+                        <img src="/assets/images/logo-black-n-white.svg">
                     </div>
                 </a>
 
@@ -312,10 +312,10 @@
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-section">
-                    <img class="footer-logo" src="../bem-acessorios-site/assets/images/logo-black.svg" alt="Logo">
+                    <img class="footer-logo" src="/assets/images/logo-black.svg" alt="Logo">
                     <p>Placeholder para descrição da loja. Texto sobre a missão, visão e valores.</p>
                     <div class="footer-social">
-                        <a target="_blank" href="https://www.instagram.com/bemacessorios_/"><img class="footer-insta-logo" src="../bem-acessorios-site/assets/images/instagram.svg" alt="Instagram"></a>
+                        <a target="_blank" href="https://www.instagram.com/bemacessorios_/"><img class="footer-insta-logo" src="/assets/images/instagram.svg" alt="Instagram"></a>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -353,13 +353,34 @@
 
         <div class="whatsapp-button">
             <a href="https://wa.me/555196845492" target="_blank">
-                <img src="../bem-acessorios-site/assets/images/whatsapp-icon.svg" alt="WhatsApp">
+                <img src="/assets/images/whatsapp-icon.svg" alt="WhatsApp">
             </a>
         </div>
 
-        <script src="../bem-acessorios-site/js/scripts.js"></script>
+        <script src="/js/scripts.js"></script>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script>
+
+            //coisas do frontend
+            let lastScrollTop = 0;
+            let header = document.getElementById("header");
+
+            window.addEventListener("scroll", function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop) {
+                    // Scroll para baixo
+                    header.style.top = "-180px"; // Ajuste esse valor conforme necessário
+                } else {
+                    // Scroll para cima
+                    header.style.top = "0";
+                }
+
+                lastScrollTop = scrollTop;
+            });
+
+
+
             var swiper = new Swiper('.swiper-container', {
                 loop: true,
                 navigation: {
