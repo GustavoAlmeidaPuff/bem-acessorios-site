@@ -432,7 +432,7 @@ main {
     display: flex;
     user-select: none;
     justify-content: center;
-    gap: 80px;
+    gap: 40px;
 }
 .category p {
     pointer-events: none;
@@ -455,8 +455,8 @@ main {
 
 .category img {
     outline: 2px solid rgb(var(--identity-green));
-    width: 160px;
-    height: 160px;
+    width: 130px;
+    height: 130px;
     max-width: fit-content;
     transition: .2s ease;
     border-radius: 50%;
@@ -488,7 +488,7 @@ main {
 .image-container {
     margin: 20px 0; /* Espaçamento entre imagens */
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(60px);
     transition: opacity 1s ease-out, transform 1s ease-out;
     margin: 0 10px; /* Adiciona margem lateral */
     position: relative;
@@ -501,6 +501,11 @@ main {
     max-width: 250px;
     width: 250px;
     margin-bottom: 30px;
+    transition: .3s ease;
+}
+
+.image-container img:hover {
+    filter: sepia(0.8)
 }
 
 

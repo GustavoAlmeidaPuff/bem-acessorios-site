@@ -56,11 +56,17 @@
             overflow-y: hidden; /* Esconde o conteúdo que excede verticalmente */
             white-space: nowrap;
             scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none
+            -ms-overflow-style: none;
+            gap: 80px;
         }
 
         .category-navigation{
             margin: 0 10px;
+        }
+
+        .category img {
+            width: 160px;
+            height: 160px;
         }
 
         .category:hover img{
@@ -69,6 +75,16 @@
         }
 
         /* galeria */
+
+        .gallery {
+            margin-left: -75px;
+        }
+
+        .image-container img {
+            max-width: 270px;
+            width: 270px;
+        }
+
 
         /* Primeira imagem da segunda coluna */
         .gallery-column:nth-of-type(2) {
