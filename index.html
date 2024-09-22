@@ -14,7 +14,7 @@
         <header id="header">
             <nav class="header-nav">
                 <!-- LOGO -->
-                <a href="../bem-acessorios-site/home.html">
+                <a href="../bem-acessorios-site/index.html">
                     <div class="logo">
                         <img src="./assets/images/logo-black-n-white.svg">
                     </div>
@@ -97,6 +97,7 @@
 
 
             <!-- Navegação por categoria -->
+
             
             <section class="home-site-section">
                 <h1>Busca por categoria</h1>
@@ -131,6 +132,124 @@
                 </div>
             </section>
 
+            <!-- Seção Galeria -->
+
+            <section class="gallery">
+
+                <div class="gallery-column">
+                    <div class="image-container">
+                        <img id="image1" src="" alt="Image 1">
+                    </div>
+                    <div class="image-container">
+                        <img id="image2" src="" alt="Image 2">
+                    </div>
+                    <div class="image-container">
+                        <img id="image3" src="" alt="Image 3">
+                    </div>
+                </div>
+
+                <div class="gallery-column">
+                    <div class="image-container">
+                        <img id="image1" src="" alt="Image 1">
+                    </div>
+                    <div class="image-container">
+                        <img id="image2" src="" alt="Image 2">
+                    </div>
+                    <div class="image-container">
+                        <img id="image3" src="" alt="Image 3">
+                    </div>
+                </div>
+                
+                <div class="gallery-column">
+                    <div class="image-container">
+                        <img id="image1" src="" alt="Image 1">
+                    </div>
+                    <div class="image-container">
+                        <img id="image2" src="" alt="Image 2">
+                    </div>
+                    <div class="image-container">
+                        <img id="image3" src="" alt="Image 3">
+                    </div>
+                </div>
+                
+                <div class="gallery-column">
+                    <div class="image-container">
+                        <img id="image1" src="" alt="Image 1">
+                    </div>
+                    <div class="image-container">
+                        <img id="image2" src="" alt="Image 2">
+                    </div>
+                    <div class="image-container">
+                        <img id="image3" src="" alt="Image 3">
+                    </div>
+                </div>
+                
+
+                <!-- script para escolher foto aleatoria -->
+                <script>
+                    // Lista de URLs de imagens
+                    const imageUrls = [
+                        "https://lh3.googleusercontent.com/pw/AP1GczOKjQvuky6lw3EhE_51CwSNQ6xN4T8PTxnXR9nbGfIQWP2e0zxVpWoEUXqkBCT58nvIDA0dmSb6UfmzjGLAfxPWF1CZRuFjfmKUofogJ929GZIGhkybzqM1PS_GPCl2FmmgaJmPupMbgERkPU6QcrLX=w742-h928-s-no-gm?authuser=0",
+                        "https://lh3.googleusercontent.com/pw/AP1GczPe9tZ9pLS_zux6RsU15WVhMCo0tAmppvJxFionmtSYYE3XBs0jrllTZjQx3aQi9L4FFr3WB4IERogLHoDSuXicsC6BAJBnKzdmsu7XZdiDGTmMYXhJS_Btvex829RN5sDsUi525wwqPDbBrEXvwXer=w742-h928-s-no-gm?authuser=0",
+                        "https://lh3.googleusercontent.com/pw/AP1GczMiXhoa0S7q4HMAQjxdgkIhOsZA6N17yjS78qRvO9WgLDOE1Nare9ZIKXhB5xTmtoeXA6UtcAMNc5ocAtrY3ylavVIZt0dh1EM7fECcr7DS8EwoS9KFtODpftdbJgcXxiHfWyjlswMNwleDAI8_NMNj=w742-h928-s-no-gm?authuser=0",
+                        "https://lh3.googleusercontent.com/pw/AP1GczNjpuyF2DN0maKm3j3UfXel0wwylv2kHEIjSn0Ztj6ZDWUKtRZ_XK57kEdraBIeU_D0sUWqm3k5HjclROKFEF65v7QEJ2Q_4vPcgTBhFFeQC7F3Xi-rkzbtcUMgu5lG14OEE6blJ0RL8xFzUNosIk5_=w742-h928-s-no-gm?authuser=0",
+                        "https://lh3.googleusercontent.com/pw/AP1GczPcWb6U1js3nIzqDt7P6jk-SubFfAQa9ahs2LMBn9X02AUGKmlpqdx1eK6483gHH_NQT00lgk8pLFkmRLFyR17k8t2D5RjPygVNdyRYrontbz-OlNQf9YUBj5109MrmIsuYie204bZ_sI4GDJWahy-S=w742-h928-s-no-gm?authuser=0",
+                        "https://lh3.googleusercontent.com/pw/AP1GczNVZjWfaTpEknTGdQ907GmgRatW5jwXKV4Tb782PALVzgplNvzGIIOPOQfgo0tS8gq2uZ0R__l9-RJ8dJOzd1BJPNot6fN4-WKtivsaRc8Sq-QYiOfviNv3TUGdH44yGH3aBclaMH2aG9WkqFilY_WP=w742-h928-s-no-gm?authuser=0",
+                        "https://lh3.googleusercontent.com/pw/AP1GczNly7I25t8uCEeFm-2TUWFt1NOBg6f9pxIzZQmZ2ocZ8HyDFgAHobAY-u96IRyGS2w1DGziXrx8TkHCr17-3eKkFQl3Y71X1ltk-hQRXRasRfM9LifPTw70QqC5VoSFEjQNewJJJlQlNmMPxsK_YhRd=w742-h928-s-no-gm?authuser=0",
+                        "https://lh3.googleusercontent.com/pw/AP1GczOydNfxHVKaNIt5up14powr6aKRdpuL-5MySLTO2vh3DQdPeTPIj4Ed6_v4WjOQuiuobM-gMB9buGPVyeG8ufbK8Z_IgTNLuW6aRwek5us2i3u3Dy6o4td8sQEBgJZE7KDHAUOa2PPRaM95E4fbXWWh=w742-h928-s-no-gm?authuser=0",
+                        "https://lh3.googleusercontent.com/pw/AP1GczMO9jfea8xwb1eeoqnlS46Cv9sx8-9oYZ08ZesH-zGQRE-ztazLJXBKE2xWrzRqlFWHvLevSk-XkJVOQeQQEUelwf96RUt3FU_V533rtpTYDqWA4X4FEK9fqrUz7HWpiyAOc5t02z8ng_lGuJWgbysN=w742-h928-s-no-gm?authuser=0",
+                        "https://lh3.googleusercontent.com/pw/AP1GczOY1Vgi6afa2mZcq3m9f7WvBNvkvZGquaGqLISY9M4VWnLe6ZorosyNlsmaUo6D9LzBWP9RZfy_TS0-Zmljoj-L6TJmi_3zhXkiHFuDYVj_R1Zn4uGxdHzZZaQX57hF3KAndEdovi74chLEVw3Bwyn6=w742-h928-s-no-gm?authuser=0",
+                        "https://lh3.googleusercontent.com/pw/AP1GczPcbH2MZFcghzylvwRjJSOW6L9a0-vqEgVFxICuIf1D3bTvNcnbjFdh6N8XSH0BXeXgvHJCaJi_AKzraPPN1FdTsvuwzX0oT3g4cHFywRUaIDKR4rXsYS2mKZprOmo0kWlsZKGkVrUUHp8MYWgNrdaI=w742-h928-s-no-gm?authuser=0",
+                        "https://lh3.googleusercontent.com/pw/AP1GczM5sjWJCP4JRpg6bKxyn0M_e-cTVLN2eERHx9kpe6e2VwP_fwD9M0U3wiyFrDfU94Vg4s215QnTPM-SxZmQPdX5DjERaRtPsA0bx8n99rujRK7ubNqtZqlyPCEoyC5T1ky63UjRgKbRVlz3G59JEN-2=w742-h928-s-no-gm?authuser=0"
+                    ];
+                
+                    // Função para embaralhar a lista de imagens
+                    function shuffle(array) {
+                        for (let i = array.length - 1; i > 0; i--) {
+                            const j = Math.floor(Math.random() * (i + 1));
+                            [array[i], array[j]] = [array[j], array[i]];
+                        }
+                    }
+                
+                    // Função para exibir imagens aleatórias
+                    function displayRandomImages() {
+                        shuffle(imageUrls); // Embaralha a lista de URLs
+                        const images = document.querySelectorAll('.image-container img');
+                        const heights = [340, 200, 250, 300]; // Alturas possíveis
+                        images.forEach((img, index) => {
+                            img.src = imageUrls[index]; // Atribui imagens sem repetição
+                            img.style.height = heights[Math.floor(Math.random() * heights.length)] + 'px'; // Atribui altura aleatória
+                        });
+                    }
+                
+                    // Chama a função ao carregar a página
+                    window.onload = displayRandomImages;
+                </script>
+                
+
+                <script>
+                    // Função que aplica o efeito de fade-in ao fazer scroll
+                    function scrollFadeIn() {
+                        const imageContainers = document.querySelectorAll('.image-container');
+
+                        imageContainers.forEach(container => {
+                            const position = container.getBoundingClientRect().top;
+                            const screenHeight = window.innerHeight;
+
+                            // Se a imagem estiver no viewport, adiciona a classe "visible"
+                            if (position < screenHeight) {
+                                container.classList.add('visible');
+                            }
+                        });
+                    }
+
+                    // Roda a função ao scrollar a página
+                    window.addEventListener('scroll', scrollFadeIn);
+
+                    // Roda a função ao carregar a página (para ver as imagens visíveis desde o começo)
+                    window.addEventListener('load', scrollFadeIn);
+                </script>
+            </section>
         </main>
 
 
@@ -312,10 +431,10 @@
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-section">
-                    <img class="footer-logo" src="/assets/images/logo-black.svg" alt="Logo">
+                    <img class="footer-logo" src="./assets/images/logo-black.svg" alt="Logo">
                     <p>Placeholder para descrição da loja. Texto sobre a missão, visão e valores.</p>
                     <div class="footer-social">
-                        <a target="_blank" href="https://www.instagram.com/bemacessorios_/"><img class="footer-insta-logo" src="/assets/images/instagram.svg" alt="Instagram"></a>
+                        <a target="_blank" href="https://www.instagram.com/bemacessorios_/"><img class="footer-insta-logo" src="./assets/images/instagram.svg" alt="Instagram"></a>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -353,11 +472,10 @@
 
         <div class="whatsapp-button">
             <a href="https://wa.me/555196845492" target="_blank">
-                <img src="/assets/images/whatsapp-icon.svg" alt="WhatsApp">
+                <img src="./assets/images/whatsapp-icon.svg" alt="WhatsApp">
             </a>
         </div>
 
-        <script src="/js/scripts.js"></script>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script>
 

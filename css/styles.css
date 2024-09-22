@@ -465,3 +465,77 @@ main {
 .pagination {
     margin-top: 10px;
 }
+
+/* Seção Galeria */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: -60px;
+    margin-top: 130px;
+}
+
+.gallery-column {
+    flex: 1; /* Ajusta a largura das colunas */
+    margin: 15px; /* Espaçamento entre colunas */
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+}
+
+.image-container {
+    margin: 20px 0; /* Espaçamento entre imagens */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    margin: 0 10px; /* Adiciona margem lateral */
+    position: relative;
+    
+}
+
+.image-container img {
+    object-fit: cover;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    max-width: 250px;
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+
+/* estilos para cada primeira imagem de cada coluna */
+
+/* Primeira imagem da primeira coluna */
+.gallery-column:nth-of-type(1) .image-container:first-child img {
+    height: 340px;
+}
+
+/* Primeira imagem da segunda coluna */
+.gallery-column:nth-of-type(2) .image-container:first-child img {
+    height: 200px;
+}
+
+/* Primeira imagem da terceira coluna */
+.gallery-column:nth-of-type(3) .image-container:first-child img {
+    height: 250px;
+}
+
+/* Primeira imagem da quarta coluna */
+.gallery-column:nth-of-type(4) .image-container:first-child img {
+    height: 300px;
+}
+
+
+
+
+/* Ativa o fade-in */
+.image-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Remove o espaço entre as linhas */
+.gallery {
+    align-items: flex-start;
+}

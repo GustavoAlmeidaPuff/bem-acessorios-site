@@ -68,6 +68,25 @@
             outline: 2px solid rgb(var(--identity-purple));
         }
 
+        /* galeria */
+
+        /* Primeira imagem da segunda coluna */
+        .gallery-column:nth-of-type(2) {
+            display: none;
+        }
+
+        /* Primeira imagem da terceira coluna */
+        .gallery-column:nth-of-type(3) {
+            display: none;
+        }
+
+        /* Primeira imagem da quarta coluna */
+        .gallery-column:nth-of-type(4) {
+            display: none;
+        }
+
+
+
         /* placeholders */
         placeholders {
             margin: 0 28px;
