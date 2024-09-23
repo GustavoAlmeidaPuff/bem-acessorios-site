@@ -279,6 +279,8 @@ placeholders{
     display: flex;
 }
 
+
+
 /* Rodapé */
 .footer {
     background-color: #f1f1f1;
@@ -466,6 +468,7 @@ main {
     margin-top: 10px;
 }
 
+
 /* Seção Galeria */
 .gallery {
     display: flex;
@@ -531,16 +534,25 @@ main {
     height: 300px;
 }
 
-
-
-
 /* Ativa o fade-in */
 .image-container.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Remove o espaço entre as linhas */
-.gallery {
-    align-items: flex-start;
+
+
+/* MAPA */
+
+.home-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 110px;
+}
+
+.home-map h1 {
+    font-size: 35px;
+    margin-bottom: 40px;
 }
