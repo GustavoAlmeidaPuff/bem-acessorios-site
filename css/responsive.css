@@ -103,42 +103,24 @@
 
 
 
-        /* placeholders */
-        placeholders {
-            margin: 0 28px;
-            display: block;
-            padding-top: 20px; /* Adicionei padding-top */
-            width: 92%;
-            justify-content: center;
-            text-align: center;
-            align-items: center;
-            margin: -15;
-        }
 
-        #kzX8yd-1 {
-            width: 90%;
-        }
-        #kzX8yd-2 {
-            display: none;
-        }
-        #kzX8yd-3 {
-            width: 90%;
-        }
-        .kzX8yd {
-            width: 100%;
-            margin: 5px;
-            margin-top: 50px;
-            padding: 20px;
-            background-color: #f0f0f0;
-        }
-        .Cz9Hkx {
+        /* FEATURED PRODUCTS */
+        .product-grid {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-bottom: 20px;
-            width: 70%;
+            align-items: center;
         }
-        
+
+        .product-card:nth-child(n+4) {
+            display: none; /* Oculta produtos a partir do quarto */
+        }
+
+        .add-to-cart {
+            padding: 10px 16px; 
+        }
+
+
+
         /* FOOTER */
         .footer{
             width: 100%;

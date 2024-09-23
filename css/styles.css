@@ -509,10 +509,11 @@ main {
     background-color: rgb(var(--identity-green));
     color: #fff;
     border: none;
-    padding: 8px 12px; /* Ajustado para um botão menor */
+    padding: 8px 12px; 
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 25px;
 }
 
 .add-to-cart:hover {
