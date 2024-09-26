@@ -27,7 +27,20 @@
 
             const result = await response.json(); // Captura a resposta
             if (response.ok) {
-                window.location.href = result.redirect; // Redireciona para a rota especificada
+                console.log('Login bem-sucedido!');
+                
+                // Exemplo de mudança dinâmica na interface
+                document.body.innerHTML = ''; // Limpa o conteúdo atual
+                const catalogContent = `
+                    <h1>Bem-vindo ao Catálogo</h1>
+                    <div id="catalog-items">
+                        <!-- Aqui você pode adicionar dinamicamente os itens do catálogo -->
+                    </div>
+                `;
+                document.body.innerHTML = catalogContent; // Adiciona novo conteúdo
+
+                // Aqui pode se fazer uma chamada para buscar os itens do catálogo, se necessário
+                // fetchCatalogItems();
             } else {
                 alert(result.message); // Exibe mensagem de erro
             }
