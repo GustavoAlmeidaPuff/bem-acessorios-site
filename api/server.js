@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path'); // Importa o módulo path
 const authRoutes = require('./routes/auth');
-const catalogRoutes = require('./routes/catalog');
+const productRoutes = require('./routes/product'); // Importa as rotas de produtos
 
 const app = express();
 app.use(cors());
@@ -30,11 +30,13 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../index.html'));
 });
 
-mongoose.connect('mongodb://localhost:27017/seu_banco', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/seu_banco');
 
 // Rotas de autenticação
 app.use('/auth', authRoutes);
-app.use('/catalog', catalogRoutes);
+
+// Rota para produtos
+app.use('/products', productRoutes); // Usa as rotas de produtos
 
 app.listen(3000, () => {
     console.log('Servidor rodando na porta 3000');

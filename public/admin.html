@@ -35,12 +35,35 @@
                     <h1>Bem-vindo ao Catálogo</h1>
                     <div id="catalog-items">
                         <!-- Aqui você pode adicionar dinamicamente os itens do catálogo -->
+                        <h2>Itens do Catálogo</h2>
+                        <ul id="product-list"></ul>
                     </div>
                 `;
                 document.body.innerHTML = catalogContent; // Adiciona novo conteúdo
 
                 // Aqui pode se fazer uma chamada para buscar os itens do catálogo, se necessário
                 // fetchCatalogItems();
+                
+                fetch('http://localhost:3000/products')
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data); // Adicione esta linha para verificar a resposta
+                        const productList = document.getElementById('product-list');
+                        data.forEach(item => {
+                            const listItem = document.createElement('li');
+                            listItem.innerHTML = `
+                                <h3>${item.nome}</h3>
+                                <p>Categoria: ${item.categoria}</p>
+                                <p>Preço: R$ ${item.preco.toFixed(2)}</p>
+                                <p>Descrição: ${item.descricao}</p>
+                                <p>Disponível: ${item.disponivel ? 'Sim' : 'Não'}</p>
+                                <img src="${item.imagens[0]}" alt="${item.nome}" style="width: 100px;">
+                            `;
+                            productList.appendChild(listItem);
+                        });
+                    })
+                    .catch(error => console.error('Erro ao buscar os itens do catálogo:', error));
+
             } else {
                 alert(result.message); // Exibe mensagem de erro
             }
