@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>catalogo bem acessorios</title>
 </head>
-<body>
+<body style="text-align: center">
     <h1>Login</h1>
     <form id="loginForm">
         <input type="text" name="username" placeholder="Usuário" required>
@@ -32,10 +32,50 @@
                 document.body.innerHTML = ''; // Limpa o conteúdo atual
                 const catalogContent = `
                     <h1>Bem-vindo ao Catálogo</h1>
-                    <input type="text" id="searchInput" placeholder="Buscar produtos..." oninput="searchProducts()">
+                    <input style="width: 40%; margin: 0 auto; padding: 13px; border: 1px solid #ccc; border-radius: 5px;" type="text" id="searchInput" placeholder="Buscar produtos..." oninput="searchProducts()">
                     <div id="product-list-container">
                         <ul id="product-list"></ul>
                     </div>
+                    <style>
+                        @import url(../css/main.css);
+
+                        #product-list-container {
+                            display: flex; // Mantenha o display flex
+                            flex-wrap: wrap; // Permita que os itens quebrem para a próxima linha
+                            justify-content: flex-start; // Alinhe os itens à esquerda
+                            width: 100%; // Certifique-se de que o contêiner ocupe 100% da largura
+                        }
+
+                        #product-list {
+                            display: flex; // Mantenha o display flex
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            gap: 10px;
+                            margin: 10px 15px;
+                            gap: 10px; // Ajuste o espaço entre os itens
+                            width: 100%; // Certifique-se de que a lista ocupe 100% da largura do contêiner
+                        }
+
+                        #product-list li {
+                            list-style-type: none;
+                            border: 1px solid #ccc;
+                            border-radius: 5px;
+                            padding: 10px;
+                            gap: 10px;
+                            flex-wrap: wrap;
+                            flex: 1 1 30%; // Permite que os itens ocupem até 30% do espaço disponível
+                            box-sizing: border-box; // Inclui padding e border no cálculo da largura
+                            max-width: 300px; // Defina uma largura máxima para os itens
+                        }
+
+
+                        .product-image {
+                            width: 30%;
+                            height: auto;
+                            border-radius: 5px;
+                        }
+
+                    </style>
                 `;
                 document.body.innerHTML = catalogContent; // Adiciona novo conteúdo
 
@@ -50,18 +90,22 @@
                         data.forEach(item => {
                             const listItem = document.createElement('li');
                             listItem.innerHTML = `
-                                <h3>${item.nome}</h3>
-                                <p>Categoria: ${item.categoria}</p>
-                                <p>Preço: R$ ${item.preco.toFixed(2)}</p>
-                                <p>Descrição: ${item.descricao}</p>
-                                <p>Disponível: ${item.disponivel ? 'Sim' : 'Não'}</p>
-                                <img src="${item.imagens[0]}" alt="${item.nome}" style="width: 100px;">
+                                <div class="product-card">
+                                    <img src="${item.imagens[0]}" alt="${item.nome}" class="product-image">
+                                    <h3>${item.nome}</h3>
+                                    <p>Categoria: ${item.categoria}</p>
+                                    <p>Preço: R$ ${item.preco.toFixed(2)}</p>
+                                    <p>Descrição: ${item.descricao}</p>
+                                    <p>Disponível: ${item.disponivel ? 'Sim' : 'Não'}</p>
+                                    <button onclick="editProduct(${item.id})">Editar</button>
+                                    <button onclick="deleteProduct(${item.id})">Excluir</button>
+                                </div>
                             `;
                             productList.appendChild(listItem);
                         });
                     })
                     .catch(error => console.error('Erro ao buscar os itens do catálogo:', error));
-
+            
             } else {
                 alert(result.message); // Exibe mensagem de erro
             }
@@ -91,16 +135,61 @@
             products.forEach(item => {
                 const listItem = document.createElement('li');
                 listItem.innerHTML = `
+                <div class="product-card">
+                    <img src="${item.imagens[0]}" alt="${item.nome}" class="product-image">
                     <h3>${item.nome}</h3>
                     <p>Categoria: ${item.categoria}</p>
                     <p>Preço: R$ ${item.preco.toFixed(2)}</p>
                     <p>Descrição: ${item.descricao}</p>
                     <p>Disponível: ${item.disponivel ? 'Sim' : 'Não'}</p>
-                    <img src="${item.imagens[0]}" alt="${item.nome}" style="width: 100px;">
+                    <button onclick="editProduct(${item.id})">Editar</button>
+                    <button onclick="deleteProduct(${item.id})">Excluir</button>
+                </div>
                 `;
                 productList.appendChild(listItem);
             });
         }
     </script>
+    <style>
+        @import url(../css/main.css);
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        #loginForm {
+            width: 20%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input {
+            width: 100%;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: rgb(var(--identity-green));
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: rgb(var(--identity-purple));
+        }
+
+
+    </style>
+
 </body>
 </html>
