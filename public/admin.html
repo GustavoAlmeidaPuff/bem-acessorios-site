@@ -13,7 +13,6 @@
         <button type="submit">Entrar</button>
     </form>
 
-
     <script>
         document.getElementById('loginForm').onsubmit = async (e) => {
             e.preventDefault();
@@ -33,9 +32,8 @@
                 document.body.innerHTML = ''; // Limpa o conteúdo atual
                 const catalogContent = `
                     <h1>Bem-vindo ao Catálogo</h1>
-                    <div id="catalog-items">
-                        <!-- Aqui você pode adicionar dinamicamente os itens do catálogo -->
-                        <h2>Itens do Catálogo</h2>
+                    <input type="text" id="searchInput" placeholder="Buscar produtos..." oninput="searchProducts()">
+                    <div id="product-list-container">
                         <ul id="product-list"></ul>
                     </div>
                 `;
@@ -68,6 +66,40 @@
                 alert(result.message); // Exibe mensagem de erro
             }
         };
+        
+        async function fetchCatalogItems() {
+            const response = await fetch('http://localhost:3000/products');
+            const data = await response.json();
+            displayProducts(data);
+        }
+        
+        async function searchProducts() {
+            const searchText = document.getElementById('searchInput').value.toLowerCase();
+            const response = await fetch('http://localhost:3000/products');
+            const data = await response.json();
+            const filteredProducts = data.filter(item => 
+                item.nome.toLowerCase().includes(searchText) || 
+                item.categoria.toLowerCase().includes(searchText)
+            );
+            displayProducts(filteredProducts);
+        }
+        
+        function displayProducts(products) {
+            const productList = document.getElementById('product-list');
+            productList.innerHTML = ''; // Limpa a lista atual
+            products.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <h3>${item.nome}</h3>
+                    <p>Categoria: ${item.categoria}</p>
+                    <p>Preço: R$ ${item.preco.toFixed(2)}</p>
+                    <p>Descrição: ${item.descricao}</p>
+                    <p>Disponível: ${item.disponivel ? 'Sim' : 'Não'}</p>
+                    <img src="${item.imagens[0]}" alt="${item.nome}" style="width: 100px;">
+                `;
+                productList.appendChild(listItem);
+            });
+        }
     </script>
 </body>
 </html>
