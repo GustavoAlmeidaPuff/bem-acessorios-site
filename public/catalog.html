@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+</head>
+<body>
+    <h1>Catálogo de Produtos</h1>
+    <input type="text" id="searchInput" placeholder="Buscar produtos..." oninput="searchProducts()">
+    <div id="product-list-container">
+        <ul id="product-list"></ul>
+    </div>
+
+    <script>
+        async function searchProducts() {
+            const searchText = document.getElementById('searchInput').value.toLowerCase();
+            const response = await fetch('http://localhost:3000/products');
+            const data = await response.json();
+            const filteredProducts = data.filter(item => 
+                item.nome.toLowerCase().includes(searchText) || 
+                item.categoria.toLowerCase().includes(searchText) ||
+                item.descricao.toLowerCase().includes(searchText)
+            );
+            displayProducts(filteredProducts);
+        }
+
+        function displayProducts(products) {
+            const productList = document.getElementById('product-list');
+            productList.innerHTML = ''; // Limpa a lista atual
+            products.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <div class="product-card">
+                        <img src="${item.imagens[0]}" alt="${item.nome}" class="product-image">
+                        <h3>${item.nome}</h3>
+                        <p>Categoria: ${item.categoria}</p>
+                        <p>Preço: R$ ${item.preco.toFixed(2)}</p>
+                        <p>Descrição: ${item.descricao}</p>
+                        <p>Disponível: ${item.disponivel ? 'Sim' : 'Não'}</p>
+                    </div>
+                `;
+                productList.appendChild(listItem);
+            });
+        }
+    </script>
+</body>
+</html>

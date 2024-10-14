@@ -27,7 +27,12 @@ app.use('/scripts', express.static(path.join(__dirname, '../js/')));
 
 // Rota para o index.html
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../index.html'));
+    res.sendFile(path.join(__dirname, '../index.html')); // Ajuste o caminho conforme necessário
+});
+
+// Rota para catalog.html
+app.get('/catalog', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/catalog.html'));
 });
 
 mongoose.connect('mongodb://localhost:27017/seu_banco');
