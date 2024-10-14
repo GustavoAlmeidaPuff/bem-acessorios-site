@@ -79,7 +79,8 @@
             const data = await response.json();
             const filteredProducts = data.filter(item => 
                 item.nome.toLowerCase().includes(searchText) || 
-                item.categoria.toLowerCase().includes(searchText)
+                item.categoria.toLowerCase().includes(searchText) ||
+                item.descricao.toLowerCase().includes(searchText) // Adicionando a descrição na busca
             );
             displayProducts(filteredProducts);
         }
