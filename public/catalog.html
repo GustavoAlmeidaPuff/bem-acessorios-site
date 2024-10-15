@@ -13,6 +13,19 @@
     </div>
 
     <script>
+        // Função para obter parâmetros da URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Coloca o valor do parâmetro 'search' no input
+        const searchValue = getQueryParam('search');
+        if (searchValue) {
+            document.getElementById('searchInput').value = searchValue;
+            searchProducts()
+        }
+
         async function searchProducts() {
             const searchText = document.getElementById('searchInput').value.toLowerCase();
             const response = await fetch('http://localhost:3000/products');
