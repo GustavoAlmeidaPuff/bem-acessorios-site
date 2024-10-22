@@ -35,6 +35,11 @@ app.get('/catalog', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/catalog.html'));
 });
 
+// Rota para admin.html
+app.get('/admin', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/admin.html')); // Certifique-se de que o caminho está correto
+});
+
 mongoose.connect('mongodb://localhost:27017/seu_banco');
 
 // Rotas de autenticação
