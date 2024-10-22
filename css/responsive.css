@@ -5,16 +5,17 @@
     }
 
     /* HEADER */
-    .search-wrapper {
+    .wide-search {
         display: none;
     }
     .mobile-search-wrapper {
         display: block;
+        height: 20px;
+        border-radius: 0;
     }
-    .header-search-input {
+    .search-wrapper {
         width: 100%;
         border-radius: 0;
-        height: 50px;
     }
     .header-contact-us {
         display: none;

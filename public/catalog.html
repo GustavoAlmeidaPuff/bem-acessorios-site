@@ -21,9 +21,7 @@
             </a>
 
             <!-- search -->
-            <div class="search-wrapper">
-                <input type="text" class="header-search-input" id="searchInput" placeholder="Buscar produtos..." oninput="searchProducts()">
-            </div>
+            <div id="searchContainer" class="wide-search"></div>
 
 
             <!-- OPÇOES -->
@@ -61,9 +59,7 @@
             </div>
         </nav>
 
-        <div class="mobile-search-wrapper">
-            <input type="text" class="header-search-input" id="searchInput" placeholder="Buscar produtos..." oninput="searchProducts()">
-        </div> 
+        <div id="mobile-search" class="mobile-search-wrapper"></div>
     </header>
 
 
@@ -74,7 +70,19 @@
         <ul style="display: flex; list-style: none; gap: 10px; flex-wrap: wrap;" id="product-list"></ul>
     </div>
 
+
     <script>
+
+        let searchBar = document.getElementById("searchContainer");   
+        searchBar.innerHTML = '<form class="search-wrapper" action="/catalog" method="get" oninput="searchProducts()" onsubmit="return searchProducts()"><div class="group"><svg class="search-icon-svg" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg><input placeholder="Buscar acessórios" type="search" class="header-search-input" id="searchInput"></div></form>'
+
+        if (window.innerWidth < 1000) {
+            searchBar.innerHTML = ''
+            let mobileSearchBar = document.getElementById("mobile-search");
+            mobileSearchBar.innerHTML = '<form class="search-wrapper" action="/catalog" method="get" oninput="searchProducts()" onsubmit="return searchProducts()"><div class="group"><svg class="search-icon-svg" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg><input placeholder="Buscar acessórios" type="search" class="header-search-input" id="searchInput"></div></form>'
+            console.log("Tela menor que 1000 pixels");
+        }
+    
         // Função para obter parâmetros da URL
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -129,5 +137,7 @@
             }
         }
     </script>
+
+    
 </body>
 </html>
