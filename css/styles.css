@@ -288,7 +288,7 @@ body {
 
 /*
  *  -------------------------------------------
- *  aqui ficam estilizaçoes de todas as paginas
+ *  aqui ficam estilizaçoes do main
  *  -------------------------------------------
 */
 
@@ -336,10 +336,11 @@ main {
     display: flex;
     user-select: none;
     justify-content: center;
-    gap: 40px;
+    gap: 25px;
 }
 .category p {
     pointer-events: none;
+    font-size: 16px;
 }
 .category {
     text-align: center;
@@ -359,8 +360,8 @@ main {
 
 .category img {
     outline: 2px solid rgb(var(--identity-green));
-    width: 130px;
-    height: 130px;
+    width: 100px;
+    height: 100px;
     max-width: fit-content;
     transition: .2s ease;
     border-radius: 50%;
@@ -379,7 +380,7 @@ main {
     justify-content: space-evenly;
     align-items: center;
     margin-left: -60px;
-    margin-top: 130px;
+    margin-top: 150px;
 }
 
 .gallery-column {
@@ -447,7 +448,7 @@ main {
 /* PRODUTOS */
 
 .product-section {
-    padding: 100px 20px;
+    padding: 65px 20px;
     text-align: center;
     background-color: #ececec;
     justify-content: center;
@@ -462,8 +463,9 @@ main {
 }
 
 .product-grid {
+    display: flex;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     width: 80%;
     justify-content: center;
