@@ -124,12 +124,18 @@
                     const listItem = document.createElement('li');
                     listItem.innerHTML = `
                         <div class="product-card">
-                            <img src="${item.imagens[0]}" alt="${item.nome}" class="product-image">
-                            <h3>${item.nome}</h3>
-                            <p>Categoria: ${item.categoria}</p>
-                            <p>Preço: R$ ${item.preco.toFixed(2)}</p>
-                            <p>Descrição: ${item.descricao}</p>
-                            <p>Disponível: ${item.disponivel ? 'Sim' : 'Não'}</p>
+                            <div class="card-image-n-name-container">
+                                <div class="card-image">
+                                    <img src="${item.imagens[0]}" alt="${item.nome}" class="product-image">
+                                </div>
+                                <div class="card-name">
+                                    <h3>${item.nome}</h3>
+                                </div>
+                            </div>
+                            <div class="card-price-n-description-container">
+                                <p class="product-description"> ${item.descricao}</p>
+                                <p class="product-price"> R$${item.preco.toFixed(2)}</p>
+                            </div>
                         </div>
                     `;
                     productList.appendChild(listItem);
