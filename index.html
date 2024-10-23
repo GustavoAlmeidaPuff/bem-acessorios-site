@@ -94,42 +94,42 @@
             
             <section class="home-site-section">
                 <h1>Busca por categoria</h1>
-                <div class="category-navigation">
+                <div class="category-navigation"  id="category-nav">
                     
-                    <div class="categories">
-                        <div class="category">
+                    <div class="categories" >
+                        <div onclick='searchCategory("brinco")' class="category">
                             <img src="https://placehold.co/350x350/png">
                             <p>Brincos</p>
                         </div>
-                        <div class="category">
+                        <div onclick='searchCategory("anel")' class="category">
                             <img src="https://placehold.co/350x350/png">
                             <p>Anéis</p>
                         </div>
-                        <div class="category">
+                        <div value="colar" onclick='searchCategory("colar")' class="category">
                             <img src="https://placehold.co/350x350/png">
                             <p>Colares</p>
                         </div>
-                        <div class="category">
+                        <div onclick='searchCategory("bracelete")' class="category">
                             <img src="https://placehold.co/350x350/png">
                             <p>Braceletes</p>
                         </div>
-                        <div class="category">
+                        <div onclick='searchCategory("pulseira")' class="category">
                             <img src="https://placehold.co/350x350/png">
                             <p>Pulseiras</p>
                         </div>
-                        <div class="category">
+                        <div onclick='searchCategory("tornozeleira")' class="category">
                             <img src="https://placehold.co/350x350/png">
                             <p>Tornozeleiras</p>
                         </div>
-                        <div class="category">
+                        <div value="conjunto" class="category">
                             <img src="https://placehold.co/350x350/png">
                             <p>Conjuntos</p>
                         </div>
-                        <div class="category">
+                        <div onclick='searchCategory("cabelo")' class="category">
                             <img src="https://placehold.co/350x350/png">
                             <p style="font-size: 13px;">Acessórios para cabelo</p>
                         </div>
-                        <div class="category">
+                        <div onclick='searchCategory("oculos")' class="category">
                             <img src="https://placehold.co/350x350/png">
                             <p>óculos de sol</p>
                         </div>
@@ -335,7 +335,7 @@
                 <div class="footer-section">
                     <h3>Institucional</h3>
                     <ul>
-                        <li><a href="#">Sobre a Loja</a></li>
+                        <li><a href="#category-nav">Sobre a Loja</a></li>
                         <li><a href="#">Como Comprar</a></li>
                         <li><a href="#">Trocas e Devoluções</a></li>
                         <li><a href="https://wa.me/555196845492">Fale Conosco</a></li>
@@ -414,7 +414,13 @@
                 // Redireciona para a página do catálogo com o termo de pesquisa
                 window.location.href = `/catalog?search=${encodeURIComponent(searchText)}`;
                 return false; // Impede o envio do formulário padrão
-        }
+            }
+
+            function searchCategory(key) {
+                const categoryValue = String(key)
+                
+                window.location.href = `/catalog?search=${encodeURIComponent(categoryValue)}`;
+            }
 
             
         </script>
